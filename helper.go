@@ -19,6 +19,13 @@ import (
 // Helpers 用于规则引擎的助手函数
 type Helpers struct{}
 
+// EqualFold reports whether s and t, interpreted as UTF-8 strings,
+// are equal under Unicode case-folding, which is a more general
+// form of case-insensitivity.
+func (Helpers) EqualFold(s1, s2 string) bool {
+	return strings.EqualFold(s1, s2)
+}
+
 // Lower returns a copy of the string s with all Unicode letters mapped to their lower case.
 func (Helpers) Lower(val string) string {
 	return strings.ToLower(val)
