@@ -19,6 +19,11 @@ import (
 // Helpers 用于规则引擎的助手函数
 type Helpers struct{}
 
+// Between 判断 数字 Val 是否在 [min,max] 范围内
+func (Helpers) Between(val int, min int, max int) bool {
+	return val >= min && val <= max
+}
+
 // EqualFold reports whether s and t, interpreted as UTF-8 strings,
 // are equal under Unicode case-folding, which is a more general
 // form of case-insensitivity.
