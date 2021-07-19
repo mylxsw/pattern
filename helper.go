@@ -12,7 +12,6 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/itchyny/gojq"
 	"github.com/mylxsw/coll"
-	"github.com/pingcap/parser"
 	"github.com/tidwall/gjson"
 )
 
@@ -71,11 +70,6 @@ func (Helpers) Now() time.Time {
 func (Helpers) ParseTime(layout string, value string) time.Time {
 	ts, _ := time.Parse(layout, value)
 	return ts
-}
-
-// SQLFinger 将 SQL 转换为其指纹
-func (Helpers) SQLFinger(sqlStr string) string {
-	return strings.ReplaceAll(parser.Normalize(sqlStr), " . ", ".")
 }
 
 // TrimSuffix 字符串去除后缀
